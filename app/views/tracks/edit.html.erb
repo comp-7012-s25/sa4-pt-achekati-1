@@ -1,0 +1,13 @@
+<h1>Edit Track</h1>
+
+<%= bootstrap_form_with model: @track, url: track_path(@track), method: :patch, data: { turbo: false } do |f| %>
+
+  <%= f.number_field :order_number, label: "Order number", min: 1, required: true %>
+  <%= f.text_field :title, label: "Title", required: true %>
+  <%= f.text_field :artist, label: "Artist", required: true %>
+  <%= f.number_field :length_in_seconds, label: "Length in seconds", min: 1, required: true %>
+
+  <%= f.submit "Update Track", class: "btn btn-primary" %>
+  <%= link_to "Cancel", tracks_path, class: "btn btn-secondary" %>
+
+<% end %>

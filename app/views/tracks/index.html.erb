@@ -18,13 +18,18 @@
           <td><%= t.title %></td>
           <td class="text-nowrap">
             <%= link_to 'show', track_path(t) %> |
-            edit |
-            destroy
+            <%= link_to 'edit', edit_track_path(t) %>  |
+            <td><%= button_to "destroy", track_path(t), method: :delete, data: { turbo: false }, class: "btn btn-link p-0 pb-1 m-0" %></td>
           </td>
         </tr>
       <% end %>
     </tbody>
 
   </table>
+  <p>
+  <%= link_to "Add Track", new_track_path, class: 'btn btn-primary' %>
+</p>
 </div>
 
+
+<%# track_path %>

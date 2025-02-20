@@ -12,5 +12,10 @@ Rails.application.routes.draw do
   root to: redirect('tracks')
 
   get 'tracks', to: 'tracks#index', as: 'tracks'
+  get 'tracks/:id/edit', to: 'tracks#edit', as: 'edit_track'
+  get 'tracks/new', to: 'tracks#new', as: 'new_track'
+  post 'tracks', to: 'tracks#create'
+  patch 'tracks/:id', to: 'tracks#update'
+  delete 'tracks/:id', to: 'tracks#destroy'
   get 'tracks/:id', to: 'tracks#show', as: 'track'
 end
